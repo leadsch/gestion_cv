@@ -54,22 +54,27 @@ class User{
 								$req->bindParam(':mot_de_passe', $motDePasse);
 
 								$req->execute();
-
-	/*	$test = $co -> query('SELECT * from users where login = "' . $login . '" AND password = "' . $pass . '"');
-    $responseTest = $test->fetchAll();
-    return $responseTest;*/
 	}
 	// modifie un user
-	public static function edit($idUSer)
+	public static function edit($nom, $prenom, $adresse_rue, $adresse_cp, $adresse_ville, $email, $date_de_naissance, $identifiant, $motDePasse, $id)
 	{
+		$bdd = Connection::db_connect();
+		$req = $bdd->prepare('UPDATE user
+												SET nom = "' . $nom . '", prenom = "' . $prenom . '", adresse_rue = "' . $adresse_rue . '" , adresse_cp = "' . $adresse_cp . '",
+														adresse_ville = "' . $adresse_ville . '", email = "' . $email . '",
+														date_de_naissance = "' . $date_de_naissance . '", identifiant = "' . $identifiant . '", mot_de_passe = "' . $motDePasse . '"
+												WHERE id_user ="' . $id . '"');
+
+							$req->execute();
 
 	}
 	// supprime un user
-	public static function delete($idUser)
+	public static function delete($id)
 	{
-
+		$bdd = Connection::db_connect();
+		$req = $bdd->prepare('DELETE FROM user WHERE id_user = "' . $id . '"');
+		$req->execute();
 	}
-
 
 }
 

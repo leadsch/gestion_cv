@@ -1,6 +1,66 @@
-<?php 
-echo "Identifiant :" .  $user[0]['identifiant']. "<br>";
-echo "Id user : " . $user[0]['id_user'] . "<br>";
-echo "Prenom : " . $user[0]['prenom'];
+<?php
+if(isset($_SESSION['id_user'])){$isConnecte=true;}else{$isConnecte=false;}
+
+$actif = "";
+
+  if ($isConnecte && ( $_SESSION['id_user'] != $user[0]['id_user'] ))
+    $actif = "disabled";
 
 ?>
+
+<div class="row">
+  <br> <br>
+  <form method="post" action="index.php?uc=user&action=envoiModification">
+    <div class="medium-6 columns">
+      <p> Identifiant <input type="text" name="identifiant" value="<?php echo $user[0]['identifiant'];?>" <?php echo $actif ?>> </p>
+    </div>
+
+    <?php
+    if ($isConnecte && ( $_SESSION['id_user'] == $user[0]['id_user'])) { ?>
+      <div class="medium-6 columns">
+        <p> Mot de passe <input type="password" name="motDePasse" value="<?php echo $user[0]['mot_de_passe']; ?>" <?php echo $actif ?>> </p>
+      </div>
+    <?php } else { ?>
+      <div class="medium-6 columns">
+      </div>
+    <?php } ?>
+
+    <div class="medium-6 columns">
+      Prénom <input type="text" name="prenom" value="<?php echo $user[0]['prenom']; ?>" <?php echo $actif ?>>
+    </div>
+    <div class="medium-6 columns">
+      Nom <input type="text" name="nom" value="<?php echo $user[0]['nom']; ?>" <?php echo $actif ?>>
+    </div>
+    <div class="medium-6 columns">
+      Rue <input type="text" name="adresse_rue" value="<?php echo $user[0]['adresse_rue']; ?>" <?php echo $actif ?>>
+    </div>
+    <div class="medium-6 columns">
+      Code Postal <input type="text" name="adresse_cp" value="<?php echo $user[0]['adresse_cp']; ?>" <?php echo $actif ?>>
+    </div>
+    <div class="medium-6 columns">
+      Ville <input type="text" name="adresse_ville" value="<?php echo $user[0]['adresse_ville']; ?>" <?php echo $actif ?>>
+    </div>
+    <div class="medium-6 columns">
+      Email <input type="text" name="email" value="<?php echo $user[0]['email']; ?>" <?php echo $actif ?>>
+    </div>
+    <div class="medium-6 columns">
+      Date de naissance <input type="text" name="date_de_naissance" value="<?php echo $user[0]['date_de_naissance']; ?>" <?php echo $actif ?>>
+    </div>
+
+    <?php
+    if ($isConnecte && ( $_SESSION['id_user'] == $user[0]['id_user'])) { ?>
+      <div class="medium-6 columns">
+        <br> <button type="submit" class="success button">Modification terminée</button>
+      </div>
+    <?php } else { ?>
+      <div class="medium-6 columns">
+      </div>
+    <?php } ?>
+  </form>
+
+  <div class="medium-6 columns">
+    <form method="post" action="index.php?uc=user&action=delete">
+      <br> <button type="submit" class="warning button">Supprimer</button>
+    </form>
+  </div>
+</div>

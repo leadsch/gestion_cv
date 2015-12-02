@@ -1,4 +1,5 @@
 <?php
+
 //controller user
 if(!isset($_REQUEST['action']) ){
      $_REQUEST['action'] = 'default';
@@ -78,13 +79,31 @@ switch($action){
   }
 
 
-	case 'edit' :{
-		//TODO
-		break;
+	case 'envoiModification' :{
+
+    $nom = $_POST['nom'];
+    $prenom = $_POST['prenom'];
+    $adresse_rue = $_POST['adresse_rue'];
+    $adresse_cp = $_POST['adresse_cp'];
+    $adresse_ville = $_POST['adresse_ville'];
+    $email = $_POST['email'];
+    $date_de_naissance = $_POST['date_de_naissance'];
+
+    $identifiant = $_POST['identifiant'];
+    $motDePasse = $_POST['motDePasse'];
+
+    $id = $_SESSION['id_user'];
+
+    $rep = User::edit($nom, $prenom, $adresse_rue, $adresse_cp, $adresse_ville, $email, $date_de_naissance, $identifiant, $motDePasse, $id);
+
+    break;
 	}
 
 	case 'delete' :{
-		//TODO
+
+    $id = $_SESSION['id_user'];
+    $rep = User::delete($id);
+
 		break;
 	}
 

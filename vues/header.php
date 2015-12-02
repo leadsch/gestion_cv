@@ -53,7 +53,8 @@ if(isset($_SESSION['id_user'])){$isConnecte=true;}else{$isConnecte=false;}
 <?php
 if($isConnecte){
     echo "<p>Salut " . $_SESSION['identifiant'] . " !</p> ";
-    echo '<a href="index.php?uc=user&action=toDisconnect"><button type="button" class="button-error pure-button">Deconnexion</button></a>';
+    echo '<a href="index.php?uc=user&action=toDisconnect"><button type="button" class="button-error pure-button">Deconnexion</button></a><br><br><br>';
+
 }else{
     include('user/v_formConnection.html');
 }

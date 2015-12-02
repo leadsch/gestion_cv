@@ -1,6 +1,21 @@
+
 <div class="panel panel-primary content">
   <div class="panel-body">
-    Liste des étudiants inscris
+        <h1 class="titreAccueil">Gestion de CV </h1>
+        <h4 class="bienvenue">Bonjour et bienvenue !</h4>
+
+        <div class="row">
+          <div class="medium-3 columns"> </div>
+          <div class="medium-3 columns">
+            <p id="test"><span class="span6">Nos membres :</span>
+              <br><a href="index.php?uc=user&action=index"
+                class="success button">Utilisateurs inscrits
+              </a>
+            </p>
+          </div>
+        </div>
+
+    <h4> * Liste des étudiants inscrits </h4>
     <table class="table">
     <thead>
       <tr>
@@ -17,10 +32,8 @@
         <td><?php echo $user['prenom'];?></td>
         <td><?php echo $user['nom'];?></td>
         <td><?php echo $user['email'];?></td>
-      </tr>   
+      </tr>
     <?php endforeach; ?>
     </tbody>
   </table>
-  </div>
-  
 </div>
