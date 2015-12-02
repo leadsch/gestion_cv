@@ -10,13 +10,13 @@ class User{
 	public static function toConnect($identifiant,$motDePasse)
 	{
 		$bdd = Connection::db_connect();
-		$req = $bdd->query('SELECT * FROM user 
-			WHERE identifiant ="' .$identifiant . '" 
+		$req = $bdd->query('SELECT * FROM user
+			WHERE identifiant ="' .$identifiant . '"
 			AND mot_de_passe = "'.$motDePasse.'"  ');
 		$reponse = $req->fetchAll();
 		return $reponse ? $reponse : "Erreur connexion";
 	}
-	
+
 	// affiche tous les users
 	public static function index()
 	{
@@ -37,7 +37,7 @@ class User{
 
 	// ajoute un user (inscription)
 	// je vous aiderai pour le md5 si besoin.
-	public static function add()
+	public static function add($identifiant, $motDePasse)
 	{
 
 	}

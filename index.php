@@ -8,26 +8,26 @@ require_once('./vues/header.php');
 
 if(!isset($_REQUEST['uc']) ){
      $_REQUEST['uc'] = 'accueil';
-}    
+}
 $uc = $_REQUEST['uc'];
 
 switch($uc){
-    case 'accueil':{  
+    case 'accueil':{
                  ob_end_flush();
                 include("vues/accueil.php") ;
                 break;
     }
-     case 'user':{  
+     case 'user':{
                 //ob_end_flush();
                 include("controllers/c_user.php") ;
                 break;
     }
-     case 'enterprise':{  
+     case 'enterprise':{
                  ob_end_flush();
                 include("vues/connection.html") ;
                 break;
     }
-       
+
 
 }
 
