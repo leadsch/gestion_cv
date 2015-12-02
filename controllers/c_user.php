@@ -51,16 +51,31 @@ switch($action){
 
 
 	case 'add' :{
-		/*$identifiant = $_POST['identifiant'];
+    include('vues/user/v_formInscription.html');
+		break;
+	}
+
+
+  case 'envoiInscription' :{
+
+    $nom = $_POST['nom'];
+    $prenom = $_POST['prenom'];
+    $adresse_rue = $_POST['adresse_rue'];
+    $adresse_cp = $_POST['adresse_cp'];
+    $adresse_ville = $_POST['adresse_ville'];
+    $email = $_POST['email'];
+    $date_de_naissance = $_POST['date_de_naissance'];
+
+    $identifiant = $_POST['identifiant'];
     $motDePasse = $_POST['motDePasse'];
 
-    $user = User::add($identifiant, $motDePasse);
+    $rep = User::add($nom, $prenom, $adresse_rue, $adresse_cp, $adresse_ville, $email, $date_de_naissance, $identifiant, $motDePasse);
 
-    if($user) {
-      $_SESSION['id_user'] = $user[0]['id_user'];
-    }
-		break;*/
-	}
+    header('Location: ./index.php');
+
+    break;
+
+  }
 
 
 	case 'edit' :{

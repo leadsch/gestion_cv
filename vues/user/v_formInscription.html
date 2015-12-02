@@ -1,9 +1,44 @@
-<form class="pure-form" method="post" action="index.php?uc=user&action=inscription">
-    <fieldset>
-        <input type="text" name="nom" placeholder="Nom"/>
-        <input type="text" name="prenom" placeholder="Prénom"/>
-        <input type="text" name ="identifiant" placeholder="Identifiant"/>
-        <input type="password" name ="motDePasse" placeholder="Mot de passe"/>
-        <button type="submit" class="pure-button pure-button-primary">Inscription</button>
-    </fieldset>
-</form>
+
+
+
+<div class="titreInscription">
+  <h1> INSCRIPTION </h1>
+</div>
+
+<div class="row">
+  <form class="pure-form" method="post" action="index.php?uc=user&action=envoiInscription">
+      <fieldset>
+        <div class="medium-6 columns">
+          <input type="text" name="nom" placeholder="Nom"/>
+        </div>
+        <div class="medium-6 columns">
+          <input type="text" name="prenom" placeholder="Prénom"/>
+        </div>
+        <div class="medium-6 columns">
+          <input type="text" name="adresse_rue" placeholder="Rue"/>
+        </div>
+        <div class="medium-6 columns">
+          <input type="text" name="adresse_cp" placeholder="Code Postal"/>
+        </div>
+        <div class="medium-6 columns">
+          <input type="text" name="adresse_ville" placeholder="Ville"/>
+        </div>
+        <div class="medium-6 columns">
+          <input type="email" name="email" placeholder="E-mail"/>
+        </div>
+        <div class="medium-6 columns">
+          <input type="text" name="date_de_naissance" placeholder="Date de naissance"/>
+        </div>
+
+        <div class="medium-6 columns">
+          <input type="text" name ="identifiant" placeholder="Identifiant"/>
+        </div>
+        <div class="medium-6 columns">
+          <input type="password" name ="motDePasse" placeholder="Mot de passe"/>
+        </div>
+        <div class="medium-6 columns">
+          <button type="submit" class="success button">Inscription</button>
+        </div>
+      </fieldset>
+  </form>
+</div>
