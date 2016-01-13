@@ -27,7 +27,11 @@ switch($uc){
                 include("vues/connection.html") ;
                 break;
     }
-
+    case 'cv':{
+                ob_end_flush();
+               include("controllers/c_cv.php") ;
+               break;
+   }
 
 }
 

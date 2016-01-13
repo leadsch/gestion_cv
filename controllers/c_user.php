@@ -16,12 +16,12 @@ switch($action){
 		$motDePasse = $_POST['motDePasse'];
 
 		//On regarde si l'user existe en base
-		$user = User::toConnect($identifiant,$motDePasse);
+		$user = User::toConnect($identifiant, $motDePasse);
 
 		//S'il existe on met dans la superglobale SESSION ses informations
 		if($user){
 			$_SESSION['id_user'] = $user[0]['id_user'];
-			$_SESSION['identifiant'] = $user[0]['identifiant']		;
+			$_SESSION['identifiant'] = $user[0]['identifiant'];
 		}
 
 		// Dans tous les cas on redirige sur l'index (pour l'instant)
@@ -48,8 +48,6 @@ switch($action){
 		include('vues/user/v_view.html');
 		break;
 	}
-
-
 
 	case 'add' :{
     include('vues/user/v_formInscription.html');
@@ -95,6 +93,7 @@ switch($action){
     $id = $_SESSION['id_user'];
 
     $rep = User::edit($nom, $prenom, $adresse_rue, $adresse_cp, $adresse_ville, $email, $date_de_naissance, $identifiant, $motDePasse, $id);
+    header('Location: ./index.php');
 
     break;
 	}
@@ -106,7 +105,6 @@ switch($action){
 
 		break;
 	}
-
 
 
     default:

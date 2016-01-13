@@ -14,7 +14,8 @@ class User{
 			WHERE identifiant ="' .$identifiant . '"
 			AND mot_de_passe = "'.$motDePasse.'"  ');
 		$reponse = $req->fetchAll();
-		return $reponse ? $reponse : "Erreur connexion";
+	//	return $reponse ? $reponse : "Erreur connexion";
+		return $reponse;
 	}
 
 	// affiche tous les users
@@ -51,7 +52,7 @@ class User{
 								$req->bindParam(':email', $email);
 								$req->bindParam(':date_de_naissance', $date_de_naissance);
 								$req->bindParam(':identifiant', $identifiant);
-								$req->bindParam(':mot_de_passe', $motDePasse);
+								$req->bindParam(':mot_de_passe', sha1($motDePasse));
 
 								$req->execute();
 	}
@@ -62,7 +63,7 @@ class User{
 		$req = $bdd->prepare('UPDATE user
 												SET nom = "' . $nom . '", prenom = "' . $prenom . '", adresse_rue = "' . $adresse_rue . '" , adresse_cp = "' . $adresse_cp . '",
 														adresse_ville = "' . $adresse_ville . '", email = "' . $email . '",
-														date_de_naissance = "' . $date_de_naissance . '", identifiant = "' . $identifiant . '", mot_de_passe = "' . $motDePasse . '"
+														date_de_naissance = "' . $date_de_naissance . '", identifiant = "' . $identifiant . '", mot_de_passe = "' . sha1($motDePasse) . '"
 												WHERE id_user ="' . $id . '"');
 
 							$req->execute();

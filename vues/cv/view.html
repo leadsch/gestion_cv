@@ -1,0 +1,115 @@
+<div class="">
+  <div class="">
+    <br>
+        <h4 class="bienvenue">Bonjour et bienvenue !</h4>
+
+        <div class="row">
+          <br><br>
+
+            <div class="medium-12 columns monCV">
+                <h4> MON CV </h4>
+            </div>
+
+            <div class="medium-12 columns contenuCV" >
+
+              <nav>
+                <ul>
+                  <li class="experience">Expériences</li>
+                  <li class="competence">Compétences</li>
+                  <li class="formation">Formations</li>
+                  <li class="contact">Contact</li>
+                </ul>
+              </nav>
+
+            </div>
+
+            <div class="medium-12 columns contenuCV" >
+                <div id="experienceContenu">
+                  <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Nom</th>
+                      <th>Date de début</th>
+                      <th>Date de fin</th>
+                      <th>Description</th>
+                    </tr>
+                  </thead>
+                  <tbody class="tableauCV">
+                  <?php foreach ($listAllExperience as $key => $cv): ?>
+                    <tr id="<?php echo $cv['id_user'] ; ?>">
+                      <td><?php echo $cv['intitule'];?></td>
+                      <td><?php echo $cv['date_debut'];?></td>
+                      <td><?php echo $cv['date_fin'];?></td>
+                      <td><?php echo $cv['description'];?></td>
+                    </tr>
+                  <?php endforeach; ?>
+                  </tbody>
+                </table>
+                </div>
+
+                <div id="formationContenu">
+                  <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Nom</th>
+                      <th>Date de début</th>
+                      <th>Date de fin</th>
+                      <th>Description</th>
+                    </tr>
+                  </thead>
+                  <tbody class="tableauCV">
+                  <?php foreach ($listAllFormations as $key => $cv): ?>
+                    <tr id="<?php echo $cv['id_user'] ; ?>">
+                      <td><?php echo $cv['intitule'];?></td>
+                      <td><?php echo $cv['date_debut'];?></td>
+                      <td><?php echo $cv['date_fin'];?></td>
+                      <td><?php echo $cv['description'];?></td>
+                    </tr>
+                  <?php endforeach; ?>
+                  </tbody>
+                </table>
+                </div>
+
+                <div id="competenceContenu">
+                  <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Compétences</th>
+                    </tr>
+                  </thead>
+                  <tbody class="tableauCV">
+                  <?php foreach ($listAllCompetences as $key => $cv): ?>
+                    <tr id="<?php echo $cv['id_user'] ; ?>">
+                      <td><?php echo $cv['competence'];?></td>
+                    </tr>
+                  <?php endforeach; ?>
+                  </tbody>
+                </table>
+                </div>
+
+                <div id="contactContenu">
+                  <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Contact</th>
+                    </tr>
+                  </thead>
+                  <tbody class="tableauCV">
+                  <?php foreach ($listAllContact as $key => $cv): ?>
+                    <tr id="<?php echo $cv['id_user'] ; ?>">
+                      <td><?php echo $cv['contact'];?></td>
+                    </tr>
+                  <?php endforeach; ?>
+                  </tbody>
+                </table>
+                </div>
+            </div>
+
+            <div class="medium-12 columns contenuCV" >
+
+            </div>
+
+
+
+
+          </div>

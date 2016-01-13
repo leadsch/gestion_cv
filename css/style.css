@@ -19,6 +19,7 @@ footer {
    height:30px;
    width:100%;
    background:#999;
+	 text-align:center;
 }
 
 .content{
@@ -58,6 +59,9 @@ a:active {
    cursor:pointer;
 }
 
+.tableauCV {
+}
+
 .formConnection{
    margin-left: 1%;
    font-size: 25%;
@@ -69,4 +73,49 @@ a:active {
 .titreInscription {
 	text-align: center;
 	color: black;
+}
+
+.monCV {
+	text-align: center;
+	margin: 3px;
+
+}
+
+.contenuCV {
+	text-align: center;
+	margin: 3px;
+}
+
+
+nav ul{
+  margin:0;
+  padding:0;
+}
+
+li{
+  width: 25%;
+  /*getting rid of the ghost                   space*/
+  float: left;
+  display:inline-block;
+  padding:20px 0;
+  text-align:center;
+  font-family:sans-serif;
+}
+
+.experience{
+  background: #BAE8C2;
+}
+.competence{
+  background:#FFF5C5;
+}
+
+.formation{
+  background:#E8CDC7;
+}
+.contact{
+  background:#ECDAFF;
+}
+
+#boutonPlus {
+	margin: -50%;
 }
