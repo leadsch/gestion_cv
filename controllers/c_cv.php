@@ -18,6 +18,11 @@ switch($action){
     $id_user = $_SESSION['id_user'];
     CV::addExperience($date_debut, $date_fin, $intitule, $description, $id_user);
 
+    $listAllExperience = CV::recupExperience($id_user);
+    $listAllFormations = CV::recupFormation($id_user);
+    $listAllCompetences = CV::recupCompetence($id_user);
+    $listAllContact = CV::recupContact($id_user);
+
     break;
   }
 
@@ -30,6 +35,11 @@ switch($action){
     $id_user = $_SESSION['id_user'];
     CV::addFormation($date_debut, $date_fin, $intitule, $description, $id_user);
 
+    $listAllExperience = CV::recupExperience($id_user);
+    $listAllFormations = CV::recupFormation($id_user);
+    $listAllCompetences = CV::recupCompetence($id_user);
+    $listAllContact = CV::recupContact($id_user);
+
     include ('./vues/cv/view.html');
     break;
   }
@@ -40,6 +50,11 @@ switch($action){
     $id_user = $_SESSION['id_user'];
     CV::addCompetence($competence, $id_user);
 
+    $listAllExperience = CV::recupExperience($id_user);
+    $listAllFormations = CV::recupFormation($id_user);
+    $listAllCompetences = CV::recupCompetence($id_user);
+    $listAllContact = CV::recupContact($id_user);
+
     include ('./vues/cv/view.html');
     break;
   }
@@ -49,6 +64,11 @@ switch($action){
 
     $id_user = $_SESSION['id_user'];
     CV::addContact($contact, $id_user);
+
+    $listAllExperience = CV::recupExperience($id_user);
+    $listAllFormations = CV::recupFormation($id_user);
+    $listAllCompetences = CV::recupCompetence($id_user);
+    $listAllContact = CV::recupContact($id_user);
 
     include ('./vues/cv/view.html');
     break;

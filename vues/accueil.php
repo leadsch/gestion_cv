@@ -97,7 +97,7 @@ if (!$isConnecte) { ?>
             <div class="medium-3 columns">
               <br>
               <a href="index.php?uc=user&action=index"
-          	    	class="success button">Utilisateurs inscrits </a>
+          	    	class="success button"> Utilisateurs inscrits </a>
               <a href="index.php?uc=user&action=index"
                   class="success button">  Informations perso. </a>
               <a href="index.php?uc=cv&action=view"

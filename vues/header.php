@@ -27,7 +27,8 @@
 <?php
 if($isConnecte){
     echo "<p> Mon compte : " . $_SESSION['identifiant'] . "</p> ";
-    echo '<a href="index.php?uc=user&action=toDisconnect"><button type="button" class="button-error pure-button">Deconnexion</button></a><br><br><br>';
+    echo '<a href="index.php?uc=user&action=toDisconnect"><button type="button" class="button-error pure-button">Deconnexion</button></a> ';
+    echo '<a href="index.php?uc=user&action=toConnect"><button type="button" class="success-button pure-button">Accueil </button></a><br><br><br>';
 
 }else{
     include('user/v_formConnection.html');
