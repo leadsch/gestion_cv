@@ -1,11 +1,7 @@
 <?php
 include_once('./fct/Connection.php');
+
 class User{
-
-	function __construct()
-	{
-
-	}
 
 	public static function toConnect($identifiant,$motDePasse)
 	{

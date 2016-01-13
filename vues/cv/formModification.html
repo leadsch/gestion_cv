@@ -1,0 +1,91 @@
+<div class="">
+  <div class="">
+    <br>
+
+        <div class="row">
+          <br><br>
+
+            <div class="medium-12 columns monCV">
+                <h4> MODIFICATION DE VOTRE CV </h4>
+            </div>
+
+            <div class="medium-12 columns contenuCV" >
+              <nav>
+                <ul>
+                  <li class="experience">Expériences</li>
+                  <li class="competence">Compétences</li>
+                  <li class="formation">Formations</li>
+                  <li class="contact">Contact</li>
+                </ul>
+              </nav>
+            </div>
+
+            <div class="medium-12 columns contenuCV" >
+                <div id="experienceContenu">
+                  <?php foreach ($listAllExperience as $key => $cv): ?>
+                  <form id="exp" method="post">
+                    <div class="medium-2 columns infoModifCV"> Intutilé </div>
+                    <div class="medium-10 columns"> <input type="text" name="nom" value="<?php echo $cv['intitule']; ?>"> </div>
+                    <div class="medium-2 columns infoModifCV"> Date de début </div>
+                    <div class="medium-10 columns"> <input type="text" name="date_debut" value="<?php echo $cv['date_debut']; ?>"> </div>
+                    <div class="medium-2 columns infoModifCV"> Date de fin </div>
+                    <div class="medium-10 columns"> <input type="text" name="date_fin" value="<?php echo $cv['date_fin']; ?>"> </div>
+                    <div class="medium-2 columns infoModifCV"> Description </div>
+                    <div class="medium-10 columns"> <input type="text" name="description" value="<?php echo $cv['description']; ?>"> </div>
+
+                    <div class="medium-12 columns"> <button type="submit" class="warning button" id="boutonPlus"> Supprimer </button>
+                    <hr></div>
+                    </form>
+                    <?php endforeach; ?>
+                    <form method="post" action="index.php?uc=cv&action=modifExperience">
+                        <div class="medium-12 columns" > <button type="submit" class="success button">Modification terminée</button> </div>
+                    </form>
+                </div>
+
+                <div id="competenceContenu">
+                  <?php foreach ($listAllCompetences as $key => $cv): ?>
+                  <form id="comp" method="post">
+                    <div class="medium-10 columns"> <input type="text" name="competence" value="<?php echo $cv['competence']; ?>"> </div>
+                    <div class="medium-2 columns"> <button type="submit" class="warning button" id="boutonPlus"> Supprimer </button>
+                    </div>
+                    </form>
+                  <?php endforeach; ?>
+                  <form method="post" action="index.php?uc=cv&action=modifCompetence">
+                      <div class="medium-12 columns" > <button type="submit" class="success button">Modification terminée</button> </div>
+                  </form>
+                </div>
+
+                <div id="formationContenu">
+                  <?php foreach ($listAllFormations as $key => $cv): ?>
+                    <form id="form" method="post">
+                      <div class="medium-2 columns infoModifCV"> Intutilé </div>
+                      <div class="medium-10 columns"> <input type="text" name="nom" value="<?php echo $cv['intitule']; ?>"> </div>
+                      <div class="medium-2 columns infoModifCV"> Date de début </div>
+                      <div class="medium-10 columns"> <input type="text" name="date_debut" value="<?php echo $cv['date_debut']; ?>"> </div>
+                      <div class="medium-2 columns infoModifCV"> Date de fin </div>
+                      <div class="medium-10 columns"> <input type="text" name="date_fin" value="<?php echo $cv['date_fin']; ?>"> </div>
+                      <div class="medium-2 columns infoModifCV"> Description </div>
+                      <div class="medium-10 columns"> <input type="text" name="description" value="<?php echo $cv['description']; ?>"> </div>
+
+                      <div class="medium-12 columns"> <button type="submit" class="warning button" id="boutonPlus"> Supprimer </button>
+                      <hr></div>
+                      </form>
+                    <?php endforeach; ?>
+                    <form method="post" action="index.php?uc=cv&action=modifFormation">
+                        <div class="medium-12 columns" > <button type="submit" class="success button">Modification terminée</button> </div>
+                    </form>
+                  </div>
+
+                  <div id="contactContenu">
+                    <?php foreach ($listAllContact as $key => $cv): ?>
+                      <form id="form" method="post" action="index.php?uc=cv&action=deleteContact">
+                        <div class="medium-10 columns"> <input type="text" name="" value="<?php echo $cv['contact']; ?>"> </div>
+                        <div class="medium-2 columns"> <button type="submit" class="warning button" id="boutonPlus"> Supprimer </button>
+                        </div>
+                        <hr>
+                        </form>
+                      <?php endforeach; ?>
+                      <form method="post" action="index.php?uc=cv&action=modifContact">
+                          <div class="medium-12 columns" > <button type="submit" class="success button">Modification terminée</button> </div>
+                      </form>
+                    </div>

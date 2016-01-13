@@ -34,7 +34,7 @@ if (!$isConnecte) { ?>
             <div class="medium-8 columns">
 
               <div class="medium-12 columns monCV">
-                  <h4> MODIFICATION CV </h4>
+                  <h4> AJOUT INFORMATIONS CV </h4>
               </div>
 
               <div class="medium-12 columns contenuCV" >

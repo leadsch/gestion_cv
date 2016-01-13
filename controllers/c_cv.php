@@ -85,6 +85,25 @@ switch($action){
     break;
   }
 
+  case 'modifCV' :{
+    $id_user = $_SESSION['id_user'];
+    $listAllExperience = CV::recupExperience($id_user);
+    $listAllFormations = CV::recupFormation($id_user);
+    $listAllCompetences = CV::recupCompetence($id_user);
+    $listAllContact = CV::recupContact($id_user);
+
+    include ('./vues/cv/formModification.html');
+    break;
+  }
+
+  case 'deleteContact' :{
+    $contact = $_POST['contact'] ;
+    $id_user = $_SESSION['id_user'];
+    $rep = CV::deleteContact($contact, $id_user);
+
+    break;
+  }
+
   default:
   	header('Location: ./index.php');
   	break;

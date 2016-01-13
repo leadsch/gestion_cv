@@ -29,6 +29,11 @@ class CV {
       return $reponse;
   }
 
+  public static function modifExperience ()
+  {
+
+  }
+
   public static function addFormation ($date_debut, $date_fin, $intitule, $description, $id_user)
 	{
 
@@ -97,6 +102,18 @@ class CV {
       $reponse = $req->fetchAll();
 
       return $reponse;
+  }
+
+  /*public static function deleteContact($contact, $id_user)
+  {
+    $bdd = Connection::db_connect();
+    $req = $bdd->prepare('DELETE FROM cv_contact
+                          WHERE id_user = "' . $id_user . '" AND id_contact = "' . $contact . '"');
+    $req->execute();
+  }*/
+
+  public static function edit () {
+    
   }
 
 }
