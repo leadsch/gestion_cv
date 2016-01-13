@@ -96,8 +96,23 @@ switch($action){
     break;
   }
 
+
+  case 'modifExperience' :{
+      $date_debut = $_POST['date_debut'];
+      $date_fin = $_POST['date_fin'];
+      $intitule = $_POST['intitule'];
+      $description = $_POST['description'];
+
+      $id_user = $_SESSION['id_user'];
+
+      $req = CV::modifExperience($date_debut, $date_fin, $intitule, $description, $id_user);
+    //  header('Location: ./index.php');
+
+      break;
+  }
+
   case 'deleteContact' :{
-    $contact = $_POST['contact'] ;
+    $contact = $_POST['id_contact'];
     $id_user = $_SESSION['id_user'];
     $rep = CV::deleteContact($contact, $id_user);
 

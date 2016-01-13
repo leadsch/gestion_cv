@@ -29,9 +29,14 @@ class CV {
       return $reponse;
   }
 
-  public static function modifExperience ()
+  public static function modifExperience ($date_debut, $date_fin, $intitule, $description, $id_user)
   {
+    $bdd = Connection::db_connect();
+    $req = $bdd->prepare('UPDATE cv_experience
+                          SET intitule = "' . $intitule . '", date_debut = "' . $date_debut . '", date_fin = "' . $date_fin . '", description = "' . $description . '"
+                          WHERE id_user = "' . $id_user . '"');
 
+    $req->execute();
   }
 
   public static function addFormation ($date_debut, $date_fin, $intitule, $description, $id_user)
@@ -113,7 +118,7 @@ class CV {
   }*/
 
   public static function edit () {
-    
+
   }
 
 }
