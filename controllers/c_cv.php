@@ -112,8 +112,10 @@ switch($action){
   }
 
   case 'deleteContact' :{
+
     $contact = $_POST['id_contact'];
     $id_user = $_SESSION['id_user'];
+
     $rep = CV::deleteContact($contact, $id_user);
 
     break;

@@ -109,16 +109,12 @@ class CV {
       return $reponse;
   }
 
-  /*public static function deleteContact($contact, $id_user)
+  public static function deleteContact($contact, $id_user)
   {
     $bdd = Connection::db_connect();
     $req = $bdd->prepare('DELETE FROM cv_contact
-                          WHERE id_user = "' . $id_user . '" AND id_contact = "' . $contact . '"');
+                          WHERE id_user = "' . $id_user . '" AND contact = "' . $contact . '"');
     $req->execute();
-  }*/
-
-  public static function edit () {
-
   }
 
 }

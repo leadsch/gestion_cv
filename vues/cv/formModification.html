@@ -79,7 +79,7 @@
                   <div id="contactContenu">
                     <?php foreach ($listAllContact as $key => $cv): ?>
                       <form id="form" method="post" action="index.php?uc=cv&action=deleteContact">
-                        <div class="medium-10 columns"> <input type="text" name="" value="<?php echo $cv['contact']; ?>"> </div>
+                        <div class="medium-10 columns"> <input type="text" name="id_contact" value="<?php echo $cv['contact']; ?>"> </div>
                         <div class="medium-2 columns"> <button type="submit" class="warning button" id="boutonPlus"> Supprimer </button>
                         </div>
                         <hr>
