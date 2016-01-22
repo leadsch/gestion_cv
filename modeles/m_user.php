@@ -8,7 +8,7 @@ class User{
 		$bdd = Connection::db_connect();
 		$req = $bdd->query('SELECT * FROM user
 			WHERE identifiant ="' .$identifiant . '"
-			AND mot_de_passe = "'.$motDePasse.'"  ');
+			AND mot_de_passe = "'.sha1($motDePasse).'"  ');
 		$reponse = $req->fetchAll();
 	//	return $reponse ? $reponse : "Erreur connexion";
 		return $reponse;

@@ -29,13 +29,25 @@ class CV {
       return $reponse;
   }
 
-  public static function modifExperience ($date_debut, $date_fin, $intitule, $description, $id_user)
+  public static function modifExperience ($date_debut, $date_fin, $intitule, $description, $id_user, $id_experience)
   {
     $bdd = Connection::db_connect();
     $req = $bdd->prepare('UPDATE cv_experience
-                          SET intitule = "' . $intitule . '", date_debut = "' . $date_debut . '", date_fin = "' . $date_fin . '", description = "' . $description . '"
-                          WHERE id_user = "' . $id_user . '"');
+                          SET intitule = "' . $intitule . '",
+                              date_debut = "' . $date_debut . '",
+                              date_fin = "' . $date_fin . '",
+                              description = "' . $description . '"
+                          WHERE id_user = "' . $id_user . '"
+                          AND id_experience = "' . $id_experience . '"');
 
+    $req->execute();
+  }
+
+  public static function deleteExperience ($date_debut, $date_fin, $intitule, $description, $id_user)
+  {
+    $bdd = Connection::db_connect();
+    $req = $bdd->prepare('DELETE FROM cv_experience
+                          WHERE id_user = "' . $id_user . '" AND date_debut = "' . $date_debut . '" AND date_fin = "' . $date_fin . '" AND intitule = "' . $intitule . '" AND description = "' . $description . '"');
     $req->execute();
   }
 

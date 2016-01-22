@@ -22,24 +22,30 @@
 
             <div class="medium-12 columns contenuCV" >
                 <div id="experienceContenu">
-                  <?php foreach ($listAllExperience as $key => $cv): ?>
-                  <form id="exp" method="post">
-                    <div class="medium-2 columns infoModifCV"> Intutilé </div>
-                    <div class="medium-10 columns"> <input type="text" name="nom" value="<?php echo $cv['intitule']; ?>"> </div>
-                    <div class="medium-2 columns infoModifCV"> Date de début </div>
-                    <div class="medium-10 columns"> <input type="text" name="date_debut" value="<?php echo $cv['date_debut']; ?>"> </div>
-                    <div class="medium-2 columns infoModifCV"> Date de fin </div>
-                    <div class="medium-10 columns"> <input type="text" name="date_fin" value="<?php echo $cv['date_fin']; ?>"> </div>
-                    <div class="medium-2 columns infoModifCV"> Description </div>
-                    <div class="medium-10 columns"> <input type="text" name="description" value="<?php echo $cv['description']; ?>"> </div>
 
-                    <div class="medium-12 columns"> <button type="submit" class="warning button" id="boutonPlus"> Supprimer </button>
-                    <hr></div>
+                    <?php foreach ($listAllExperience as $key => $cv): ?>
+                      <form method="post" action="index.php?uc=cv&action=modifExperience">
+                    <!--<form id="exp" method="post" action="index.php?uc=cv&action=deleteExperience">-->
+                      <div class="medium-2 columns infoModifCV"> Intutilé </div>
+                      <div class="medium-10 columns"> <input type="text" name="intitule" value="<?php echo $cv['intitule']; ?>"> </div>
+                      <div class="medium-2 columns infoModifCV"> Date de début </div>
+                      <div class="medium-10 columns"> <input type="text" name="date_debut" value="<?php echo $cv['date_debut']; ?>"> </div>
+                      <div class="medium-2 columns infoModifCV"> Date de fin </div>
+                      <div class="medium-10 columns"> <input type="text" name="date_fin" value="<?php echo $cv['date_fin']; ?>"> </div>
+                      <div class="medium-2 columns infoModifCV"> Description </div>
+                      <div class="medium-10 columns"> <input type="text" name="description" value="<?php echo $cv['description']; ?>"> </div>
+                      <div class="medium-2 columns infoModifCV"> ID </div>
+                      <div class="medium-10 columns"> <input type="text" name="id_experience" value="<?php echo $cv['id_experience']; ?>"> </div>
+
+                    <!--  <div class="medium-12 columns"> <button type="submit" class="warning button" id="boutonPlus"> Supprimer </button>-->
+                      </div>
+                      <div class="medium-12 columns" > <button type="submit" class="success button">Modification terminée</button> </div>
+                      <hr>
                     </form>
                     <?php endforeach; ?>
-                    <form method="post" action="index.php?uc=cv&action=modifExperience">
-                        <div class="medium-12 columns" > <button type="submit" class="success button">Modification terminée</button> </div>
-                    </form>
+
+                  <!--  </form>-->
+
                 </div>
 
                 <div id="competenceContenu">
@@ -48,7 +54,6 @@
                     <div class="medium-10 columns"> <input type="text" name="competence" value="<?php echo $cv['competence']; ?>"> </div>
                     <div class="medium-2 columns"> <button type="submit" class="warning button" id="boutonPlus"> Supprimer </button>
                     </div>
-                    </form>
                   <?php endforeach; ?>
                   <form method="post" action="index.php?uc=cv&action=modifCompetence">
                       <div class="medium-12 columns" > <button type="submit" class="success button">Modification terminée</button> </div>
