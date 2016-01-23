@@ -3,6 +3,17 @@ include_once('./fct/Connection.php');
 
 class CV {
 
+  public static function recupID ($prenom, $nom)
+  {
+    $bdd = Connection::db_connect();
+    $req = $bdd->query('SELECT id_user FROM user
+      WHERE prenom ="'  . $prenom .'"
+          AND nom = "' . $nom . '"');
+    $reponse = $req->fetchAll();
+
+    return $reponse;
+  }
+
   ///// EXPERIENCE
 
   // ajouter une expérience

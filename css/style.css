@@ -123,3 +123,14 @@ li{
 #boutonPlus {
 	margin: -50%;
 }
+
+.listeCV {
+	text-align: center;
+}
+
+.listeCV h4 {
+}
+
+table {
+	margin:auto;
+}

@@ -30,7 +30,7 @@
                   <div class="medium-2 columns infoModifCV"> Description </div>
                   <div class="medium-10 columns"> <input type="text" name="description" value="<?php echo $cv['description']; ?>"> </div>
                   <div class="medium-2 columns infoModifCV"> ID </div>
-                  <div class="medium-10 columns"> <input type="text" name="id_experience" value="<?php echo $cv['id_experience']; ?>"> </div>
+                  <div class="medium-10 columns"> <input type="text" name="id_experience" value="<?php echo $cv['id_experience']; ?>" disabled> </div>
 
                   <div class="medium-6 columns"> <button type="submit" class="warning button" name="suppression" id="boutonPlus"> Supprimer </button> </div>
                   <div class="medium-6 columns" > <button type="submit" class="success button" name="modification"> Modification terminée </button> </div>
@@ -43,7 +43,7 @@
             <?php foreach ($listAllCompetences as $key => $cv): ?>
               <form id="comp" method="post" action="index.php?uc=cv&action=modifCompetence">
                 <div class="medium-6 columns"> <input type="text" name="competence" value="<?php echo $cv['competence']; ?>"> </div>
-                <div class="medium-6 columns"> <input type="text" name="id_competence" value="<?php echo $cv['id_competence']; ?>"> </div>
+                <div class="medium-6 columns"> <input type="text" name="id_competence" value="<?php echo $cv['id_competence']; ?>" disabled> </div>
 
                 <div class="medium-6 columns"> <button type="submit" class="warning button" name="suppression" id="boutonPlus"> Supprimer </button> </div>
                 <div class="medium-6 columns" > <button type="submit" class="success button" name="modification">Modification terminée</button> </div>
@@ -64,7 +64,7 @@
                 <div class="medium-2 columns infoModifCV"> Description </div>
                 <div class="medium-10 columns"> <input type="text" name="description" value="<?php echo $cv['description']; ?>"> </div>
                 <div class="medium-2 columns infoModifCV"> ID </div>
-                <div class="medium-10 columns"> <input type="text" name="id_formation" value="<?php echo $cv['id_formation']; ?>"> </div>
+                <div class="medium-10 columns"> <input type="text" name="id_formation" value="<?php echo $cv['id_formation']; ?>" disabled> </div>
 
                 <div class="medium-6 columns"> <button type="submit" class="warning button" name="suppression" id="boutonPlus"> Supprimer </button> </div>
                 <div class="medium-6 columns" > <button type="submit" class="success button" name="modification">Modification terminée</button> </div>
@@ -77,7 +77,7 @@
             <?php foreach ($listAllContact as $key => $cv): ?>
               <form id="form" method="post" action="index.php?uc=cv&action=modifContact">
                 <div class="medium-6 columns"> <input type="text" name="contact" value="<?php echo $cv['contact']; ?>"> </div>
-                <div class="medium-6 columns"> <input type="text" name="id_contact" value="<?php echo $cv['id_contact']; ?>"> </div>
+                <div class="medium-6 columns"> <input type="text" name="id_contact" value="<?php echo $cv['id_contact']; ?>"disabled> </div>
 
                 <div class="medium-6 columns"> <button type="submit" class="warning button" name="suppression" id="boutonPlus"> Supprimer </button> </div>
                 <div class="medium-6 columns" > <button type="submit" class="success button" name="modification">Modification terminée</button> </div>

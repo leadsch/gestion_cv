@@ -4,22 +4,23 @@ if(isset($_SESSION['id_user'])){$isConnecte=true;}else{$isConnecte=false;}
 if (!$isConnecte) { ?>
   <div class="panel panel-primary content">
     <div class="panel-body">
-          <h1 class="titreAccueil">Gestion de CV </h1>
-          <h4 class="bienvenue">Bonjour et bienvenue !</h4>
+      <h1 class="titreAccueil">Gestion de CV </h1>
+      <h4 class="bienvenue">Bonjour et bienvenue !</h4>
 
-          <br> <br> <br>
-              <p id="test"><span class="span6">Nos membres :</span>
-              	<br><a href="index.php?uc=user&action=index"
-          	    	class="success button">Utilisateurs inscrits
-              	</a>
-            	</p>
+      <br> <br> <br>
+      <p id="test">
+        <span class="span6">Nos membres :</span>
+        <br>
+        <a href="index.php?uc=user&action=index" class="success button">Utilisateurs inscrits </a>
+      </p>
+      <p id="test">
+        <span class="span6">Pas encore inscrit ?</span>
+        <br>
+        <a href="index.php?uc=user&action=add" class="success button">Inscription </a>
+      </p>
+    </div>
 
-            <p id="test"><span class="span6">Pas encore inscrit ?</span>
-            <br><a href="index.php?uc=user&action=add"
-              class="success button">Inscription
-            </a>
-          </p>
-      </div>
+
   </div>
 
 <?php } else { ?>
@@ -101,7 +102,9 @@ if (!$isConnecte) { ?>
               <a href="index.php?uc=user&action=index"
                   class="success button">  Informations perso. </a>
               <a href="index.php?uc=cv&action=view"
-                  class="secondary button"> Aperçu CV </a>
+                  class="secondary button"> Modification CV </a>
+              <a href="index.php?uc=cv&action=listeCV"
+                  class="secondary button"> Liste  de tous les CV </a>
               <br>
             </div>
           </div>

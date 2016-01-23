@@ -6,8 +6,34 @@ if(!isset($_REQUEST['action']) ){
 }
 $action = $_REQUEST['action'];
 require_once('modeles/m_cv.php');
+require_once('modeles/m_user.php');
 
 switch($action){
+
+  case 'listeCV' :{
+    $listAllUser = User::index();
+
+    include ('./vues/cv/listeCV.html');
+    break;
+  }
+
+  case 'affichCV' :{
+    $listAllUser = User::index();
+
+    $prenom = $_POST['prenom'];
+    $nom = $_POST['nom'];
+
+    $tableau_iduser = CV::recupID($prenom, $nom);
+    $id_user = $tableau_iduser[0][0];
+
+    $listAllExperience = CV::recupExperience($id_user);
+    $listAllCompetences = CV::recupCompetence($id_user);
+    $listAllFormations = CV::recupFormation($id_user);
+    $listAllContact = CV::recupContact($id_user);
+
+    include ('./vues/cv/listeCV_user.html');
+    break;
+  }
 
 	case 'addExperience' :{
     $date_debut = $_POST['date_debut'];
@@ -152,7 +178,6 @@ switch($action){
       $rep = CV::deleteCompetence($competence, $id_user);
     }
 
-    include ('./vues/cv/view.html');
     break;
   }
 
@@ -184,7 +209,6 @@ switch($action){
       $rep = CV::deleteFormation($date_debut, $date_fin, $intitule, $description, $id_user);
     }
 
-    include ('./vues/cv/view.html');
     break;
   }
 
@@ -208,7 +232,6 @@ switch($action){
       $rep = CV::deleteContact($contact, $id_user);
     }
 
-    include ('./vues/cv/view.html');
     break;
   }
 

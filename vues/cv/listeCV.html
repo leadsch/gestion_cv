@@ -1,0 +1,17 @@
+<div class="row">
+  <br><br>
+  <div class="medium-12 columns monCV">  <h4> LISTE DES CV DE NOS MEMBRES </h4> </div>
+  <hr>
+
+  <?php foreach ($listAllUser as $key => $user): ?>
+    <div class="medium-12 columns contenuCV">
+
+      <form method="post" action="index.php?uc=cv&action=affichCV">
+        <div class="medium-5 columns" ><input type="text" name="prenom" value="<?php echo $user['prenom']; ?>"> </div>
+        <div class="medium-5 columns" ><input type="text" name="nom" value="<?php echo $user['nom']; ?>"> </div>
+        <div class="medium-2 columns"> <button type="submit" class="warning button" name="affichCV" > Voir le CV </button> </div>
+      </form>
+    </div>
+    <div> . </div>
+    <?php endforeach; ?>
+</div>
