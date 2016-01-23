@@ -138,14 +138,14 @@ class CV {
       return $reponse;
   }
 
-  // modifie un contat
+  // modifie un contact
   public static function modifContact ($contact, $id_user, $id_contact)
   {
     $bdd = Connection::db_connect();
     $req = $bdd->prepare('UPDATE cv_contact
                           SET contact = "' . $contact . '"
-                          WHERE id_user = "' . $id_user . '"
-                          AND id_contact = "' . $id_contact . '"');
+                          WHERE id_contact = "' . $id_contact . '"
+                          AND id_user = "' . $id_user . '"');
     $req->execute();
 
     echo $contact;
