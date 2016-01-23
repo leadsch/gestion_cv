@@ -87,6 +87,30 @@ class CV {
       return $reponse;
   }
 
+  // modifie une formation
+  public static function modifFormation ($date_debut, $date_fin, $intitule, $description, $id_user, $id_formation)
+  {
+    $bdd = Connection::db_connect();
+    $req = $bdd->prepare('UPDATE cv_formation
+                          SET intitule = "' . $intitule . '",
+                              date_debut = "' . $date_debut . '",
+                              date_fin = "' . $date_fin . '",
+                              description = "' . $description . '"
+                          WHERE id_user = "' . $id_user . '"
+                          AND id_formation = "' . $id_formation . '"');
+
+    $req->execute();
+  }
+
+  // supprime une formation
+  public static function deleteFormation ($date_debut, $date_fin, $intitule, $description, $id_user)
+  {
+    $bdd = Connection::db_connect();
+    $req = $bdd->prepare('DELETE FROM cv_formation
+                          WHERE id_user = "' . $id_user . '" AND date_debut = "' . $date_debut . '" AND date_fin = "' . $date_fin . '" AND intitule = "' . $intitule . '" AND description = "' . $description . '"');
+    $req->execute();
+  }
+
 
   ///// COMPETENCE
 
@@ -101,7 +125,7 @@ class CV {
 								$req->execute();
 	}
 
-  // récupère ue compétence
+  // récupère une compétence
   public static function recupCompetence ($id_user)
   {
       $bdd = Connection::db_connect();
@@ -112,8 +136,28 @@ class CV {
       return $reponse;
   }
 
+  // modifie une compétence
+  public static function modifCompetence ($competence, $id_user, $id_competence)
+  {
+    $bdd = Connection::db_connect();
+    $req = $bdd->prepare('UPDATE cv_competences
+                          SET competence = "' . $competence . '"
+                          WHERE id_competence = "' . $id_competence . '"
+                          AND id_user = "' . $id_user . '"');
+    $req->execute();
+  }
 
-  ////// contact
+  // supprime une compétence
+  public static function deleteCompetence($competence, $id_user)
+  {
+    $bdd = Connection::db_connect();
+    $req = $bdd->prepare('DELETE FROM cv_competences
+                          WHERE id_user = "' . $id_user . '" AND competence = "' . $competence . '"');
+    $req->execute();
+  }
+
+
+  ////// CONTACT
 
   // ajouter un contact
   public static function addContact ($contact, $id_user)
@@ -147,9 +191,6 @@ class CV {
                           WHERE id_contact = "' . $id_contact . '"
                           AND id_user = "' . $id_user . '"');
     $req->execute();
-
-    echo $contact;
-    echo $id_user;
   }
 
   // supprime un contact

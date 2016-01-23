@@ -23,6 +23,7 @@ switch($action){
     $listAllCompetences = CV::recupCompetence($id_user);
     $listAllContact = CV::recupContact($id_user);
 
+    include ('./vues/cv/view.html');
     break;
   }
 
@@ -127,7 +128,64 @@ switch($action){
 
     //  header('Location: ./index.php');
 
-      break;
+    include ('./vues/cv/view.html');
+    break;
+  }
+
+  case 'modifCompetence' :{
+    if (isset($_POST['modification'])) {
+      // modification d'une compétence
+
+      $competence = $_POST['competence'];
+      $id_competence = $_POST['id_competence'];
+
+      $id_user = $_SESSION['id_user'];
+
+      $req = CV::modifCompetence($competence, $id_user, $id_competence);
+
+    } else {
+      // suppression d'une compétence
+
+      $competence = $_POST['competence'];
+      $id_user = $_SESSION['id_user'];
+
+      $rep = CV::deleteCompetence($competence, $id_user);
+    }
+
+    include ('./vues/cv/view.html');
+    break;
+  }
+
+  case 'modifFormation' :{
+
+    if (isset($_POST['modification'])) {
+      // modification d'une expérience
+
+      $date_debut = $_POST['date_debut'];
+      $date_fin = $_POST['date_fin'];
+      $intitule = $_POST['intitule'];
+      $description = $_POST['description'];
+      $id_formation = $_POST['id_formation'];
+
+      $id_user = $_SESSION['id_user'];
+
+      $req = CV::modifFormation($date_debut, $date_fin, $intitule, $description, $id_user, $id_formation);
+
+    } else {
+      // suppresion d'une expérience
+
+      $date_debut = $_POST['date_debut'];
+      $date_fin = $_POST['date_fin'];
+      $intitule = $_POST['intitule'];
+      $description = $_POST['description'];
+
+      $id_user = $_SESSION['id_user'];
+
+      $rep = CV::deleteFormation($date_debut, $date_fin, $intitule, $description, $id_user);
+    }
+
+    include ('./vues/cv/view.html');
+    break;
   }
 
   case 'modifContact' :{
@@ -150,32 +208,9 @@ switch($action){
       $rep = CV::deleteContact($contact, $id_user);
     }
 
-    //  header('Location: ./index.php');
-
-      break;
-  }
-
-  /*case 'deleteExperience' :{
-    $date_debut = $_POST['date_debut'];
-    $date_fin = $_POST['date_fin'];
-    $intitule = $_POST['intitule'];
-    $description = $_POST['description'];
-
-    $id_user = $_SESSION['id_user'];
-
-    $rep = CV::deleteExperience($date_debut, $date_fin, $intitule, $description, $id_user);
-
+    include ('./vues/cv/view.html');
     break;
   }
-
-  case 'deleteContact' :{
-    $contact = $_POST['contact'];
-    $id_user = $_SESSION['id_user'];
-
-    $rep = CV::deleteContact($contact, $id_user);
-
-    break;
-  }*/
 
   default:
   	header('Location: ./index.php');
