@@ -33,7 +33,6 @@ class User{
 	}
 
 	// ajoute un user (inscription)
-	// je vous aiderai pour le md5 si besoin.
 	public static function add($nom, $prenom, $adresse_rue, $adresse_cp, $adresse_ville, $email, $date_de_naissance, $identifiant, $motDePasse)
 	{
 		$bdd = Connection::db_connect();
@@ -52,6 +51,7 @@ class User{
 
 								$req->execute();
 	}
+
 	// modifie un user
 	public static function edit($nom, $prenom, $adresse_rue, $adresse_cp, $adresse_ville, $email, $date_de_naissance, $identifiant, $motDePasse, $id)
 	{
@@ -65,6 +65,7 @@ class User{
 							$req->execute();
 
 	}
+	
 	// supprime un user
 	public static function delete($id)
 	{
