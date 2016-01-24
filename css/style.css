@@ -128,9 +128,6 @@ li{
 	text-align: center;
 }
 
-.listeCV h4 {
-}
-
 table {
 	margin:auto;
 }
@@ -140,4 +137,56 @@ number {
 	border: 1px solid black;
 	padding: 15px;
 	margin: 15px;
+}
+
+.bordureCV {
+	border: 1px solid #8EC63F;
+	background-color: #8EC63F;
+	padding: 15px;
+}
+
+.infoDroiteCV {
+	background-color: #f6f7f9;
+	padding: 10px;
+	min-height: 100%;
+}
+
+.infoDroiteCV h3 {
+	margin: 20px;
+	text-align: right;
+	font-weight: bold;
+	color: #8EC63F;
+}
+
+.infoDroiteCV h5 {
+	font-weight: bold;
+}
+
+.infoDroiteCV table {
+	font-size: 12px;
+	margin-bottom: 25px;
+}
+
+.infoGaucheCV {
+	background-color: #e9eaec;
+	padding: 10px;
+}
+
+.infoGaucheCV h5 {
+	font-weight: bold;
+}
+
+.titreCV {
+	margin-top: 20px;
+}
+
+.imageCV {
+	width:150px;
+	height: 160px;
+	margin: 15px;
+	margin-left: 100px;
+}
+
+.CVuser {
+	background-color: #f6f7f9;
 }

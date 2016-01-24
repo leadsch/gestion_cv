@@ -26,13 +26,11 @@ fclose($compteur_f); ?>
 <div class="row">
   <br><br>
   <div class="medium-12 columns monCV">
-    <h4> CV - <?php echo $_POST['prenom']; echo " "; echo $_POST['nom']; ?></h4>
+    <h4> Curriculum Vitae </h4>
   </div>
   <hr>
-</div>
 
-<div class="medium-12 columns contenuCV" >
-      <div class="medium-12 columns experience">EXPERIENCE</div>
+<!--      <div class="medium-12 columns experience">EXPERIENCE</div>
 </div>
 
 <div class="medium-12 columns contenuCV" >
@@ -135,4 +133,108 @@ fclose($compteur_f); ?>
       </tbody>
     </table>
   </div>
+</div>-->
+
+<div class="medium-1 columns"> . </div>
+<div class="medium-10 columns CVuser">
+  <div class="medium-12 columns bordureCV"> </div>
+  <div class="medium-5 columns infoGaucheCV">
+    <div class="medium-12 columns">
+      <img src="./img/headshot.png" alt="" class="imageCV"/>
+    </div>
+
+    <div class="medium-12 columns titreCV">
+      <div class="medium-2 columns">
+        <img src="./img/logo_profil.png" alt="" />
+      </div>
+      <div class="medium-10 columns">
+        <h5> Profil </h5>
+      </div>
+    </div>
+
+    <div class="medium-6 columns"> <?php echo $_POST['prenom']; echo " "; echo mb_strtoupper($_POST['nom']); ?>  </div>
+    <div class="medium-6 columns">  ... </div>
+
+    <div class="medium-12 columns titreCV">
+      <div class="medium-2 columns">
+        <img src="./img/logo_contact.png" alt="" />
+      </div>
+      <div class="medium-10 columns">
+        <h5> Contact </h5>
+      </div>
+    </div>
+    <div class="medium-12 columns">
+        <?php foreach ($listAllContact as $key => $cv): ?>
+            <?php echo $cv['contact']; ?> </br>
+        <?php endforeach; ?>
+    </div>
+
+    <div class="medium-12 columns titreCV">
+      <div class="medium-2 columns">
+        <img src="./img/logo_competence.png" alt="" />
+      </div>
+      <div class="medium-10 columns">
+        <h5> Compétences </h5>
+      </div>
+    </div>
+    <div class="medium-12 columns">
+        <?php foreach ($listAllCompetences as $key => $cv): ?>
+          <?php echo $cv['competence']; ?> </br>
+        <?php endforeach; ?>
+    </div>
+  </div>
+
+  <div class="medium-7 columns infoDroiteCV">
+    <h3><?php echo $_POST['prenom']; echo " "; echo mb_strtoupper($_POST['nom']); ?> </h3>
+
+    <div class="medium-12 columns titreCV">
+      <div class="medium-2 columns">
+        <img src="./img/logo_formation.png" alt="" />
+      </div>
+      <div class="medium-10 columns">
+        <h5> Formations </h5>
+      </div>
+    </div>
+    <div class="medium-12 columns">
+      <table class="table">
+
+        <tbody class="liste">
+        <?php foreach ($listAllFormations as $key => $cv): ?>
+          <tr>
+            <td> <?php echo $cv['intitule']; ?> </td>
+            <td> <?php echo $cv['date_debut']; ?> </td>
+            <td> <?php echo $cv['date_fin']; ?> </td>
+            <td> <?php echo $cv['description']; ?> </td>
+          </tr>
+        <?php endforeach; ?>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="medium-12 columns titreCV">
+      <div class="medium-2 columns">
+        <img src="./img/logo_experience.png" alt="" />
+      </div>
+      <div class="medium-10 columns">
+        <h5> Expériences  </h5>
+      </div>
+    </div>
+    <div class="medium-12 columns">
+      <table class="table">
+        <tbody class="liste">
+        <?php foreach ($listAllExperience as $key => $cv): ?>
+          <tr>
+            <td> <?php echo $cv['intitule']; ?> </td>
+            <td> <?php echo $cv['date_debut']; ?> </td>
+            <td> <?php echo $cv['date_fin']; ?> </td>
+            <td> <?php echo $cv['description']; ?> </td>
+          </tr>
+        <?php endforeach; ?>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+<div class="medium-12 columns bordureCV"> </div>
 </div>
+<div class="medium-1 columns"> . </div>
