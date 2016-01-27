@@ -12,13 +12,14 @@ header{
 header > p {
   font-size: 40px;
 }
+
 footer {
    position:fixed;
    left:0px;
    bottom:0px;
    height:30px;
    width:100%;
-   background:#999;
+   background:#eee;
 	 text-align:center;
 }
 
@@ -188,5 +189,5 @@ number {
 }
 
 .CVuser {
-	background-color: #f6f7f9;
+	padding: 0;
 }

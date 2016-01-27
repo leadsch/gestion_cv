@@ -213,6 +213,31 @@ class CV {
     $req->execute();
   }
 
+  public static function compteurVisite($nom)
+  {
+    $filename = 'nombreVisitesCV/visiteursCV_' . $nom . '.txt';
+
+    if (file_exists($filename)) {
+      $count = file($filename);
+      $count[0] ++;
+      $fp = fopen($filename, "w");
+      fputs ($fp, "$count[0]");
+      fclose ($fp);
+    }
+
+    else {
+      $fh = fopen($filename, "w");
+      if($fh==false)
+          die("unable to create file");
+      fputs ($fh, 1);
+      fclose ($fh);
+      $count = file($filename);
+    }
+
+    return $count[0];
+  }
+
+
 }
 
 ?>

@@ -30,6 +30,7 @@ switch($action){
     $listAllCompetences = CV::recupCompetence($id_user);
     $listAllFormations = CV::recupFormation($id_user);
     $listAllContact = CV::recupContact($id_user);
+    $count = CV::compteurVisite($nom);
 
     include ('./vues/cv/listeCV_user.html');
     break;
@@ -153,8 +154,6 @@ switch($action){
     }
 
     //  header('Location: ./index.php');
-
-    include ('./vues/cv/view.html');
     break;
   }
 

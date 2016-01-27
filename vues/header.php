@@ -14,9 +14,8 @@
         <script type="text/javascript" src="./js/foundation.js"></script>
         <script type="text/javascript" src="./js/foundation.min.js"></script>
         <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
-        <style scoped>
+        <style scoped> </style>
 
-    </style>
         <title>Gestionnaire CV</title>
     </head>
 
