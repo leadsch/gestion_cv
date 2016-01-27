@@ -147,7 +147,7 @@ class CV {
       return $reponse;
   }
 
-  // modifie une compétence
+  // modifie une compétences
   public static function modifCompetence ($competence, $id_user, $id_competence)
   {
     $bdd = Connection::db_connect();
@@ -228,7 +228,7 @@ class CV {
     else {
       $fh = fopen($filename, "w");
       if($fh==false)
-          die("unable to create file");
+          die("Impossible de créer le fichier");
       fputs ($fh, 1);
       fclose ($fh);
       $count = file($filename);
@@ -237,6 +237,46 @@ class CV {
     return $count[0];
   }
 
+  //// BARRE RECHERCHER
+
+  public static function rechercherCompetence($competenceRecherche)
+  {
+    $bdd = Connection::db_connect();
+    $req = $bdd->query('SELECT id_user FROM cv_competences
+                          WHERE competence LIKE "%' . $competenceRecherche . '%"');
+    $reponse = $req->fetchAll();
+    return $reponse;
+  }
+
+  public static function rechercherNom ($nom)
+  {
+    $bdd = Connection::db_connect();
+    $req = $bdd->query('SELECT id_user, nom, prenom FROM user
+                          WHERE nom LIKE "%' . $nom . '%"');
+    $reponse = $req->fetchAll();
+
+        var_dump($reponse);
+
+    return $reponse;
+  }
+
+  public static function rechercherPrenom ($prenom)
+  {
+    $bdd = Connection::db_connect();
+    $req = $bdd->query('SELECT id_user, nom, prenom FROM user
+                          WHERE prenom LIKE "%' . $prenom . '%"');
+    $reponse = $req->fetchAll();
+    return $reponse;
+  }
+
+  public static function rechercherExperience ($experience)
+  {
+    $bdd = Connection::db_connect();
+    $req = $bdd->query('SELECT id_user FROM cv_experience
+                          WHERE intitule LIKE "%' . $experience . '%"');
+    $reponse = $req->fetchAll();
+    return $reponse;
+  }
 
 }
 

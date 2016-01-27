@@ -115,6 +115,10 @@ switch($action){
 
   case 'modifCV' :{
     $id_user = $_SESSION['id_user'];
+    $visible = $_POST['visible'];
+
+    $visibiliteCV = User::addVisiblite($visible, $id_user);
+
     $listAllExperience = CV::recupExperience($id_user);
     $listAllFormations = CV::recupFormation($id_user);
     $listAllCompetences = CV::recupCompetence($id_user);
@@ -230,6 +234,21 @@ switch($action){
 
       $rep = CV::deleteContact($contact, $id_user);
     }
+
+    break;
+  }
+
+  case 'recherche' :{
+    $recherche = $_POST['rechercher'];
+
+    $competenceRecherche = CV::rechercherCompetence($recherche);
+    $nomRecherche = CV::rechercherNom($recherche);
+    $prenomRecherche = CV::rechercherPrenom($recherche);
+    $experienceRecherche = CV::rechercherExperience($recherche);
+
+    $user_recherche[] = $prenomRecherche;
+
+    include ('./vues/cv/listeCV.html');
 
     break;
   }

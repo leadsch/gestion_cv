@@ -65,7 +65,7 @@ class User{
 							$req->execute();
 
 	}
-	
+
 	// supprime un user
 	public static function delete($id)
 	{
@@ -73,6 +73,45 @@ class User{
 		$req = $bdd->prepare('DELETE FROM user WHERE id_user = "' . $id . '"');
 		$req->execute();
 	}
+
+	  ///// CV PUBLIC / PRIVE
+
+	  public static function addVisiblite ($isVisible, $id_user)
+	  {
+			$bdd = Connection::db_connect();
+			$req = $bdd->prepare('UPDATE user
+													SET isVisible = "' . $isVisible . '"
+													WHERE id_user = "' . $id_user . '"');
+
+								$req->execute();
+	  }
+
+		public static function recupVisibilite ()
+	  {
+	      $bdd = Connection::db_connect();
+	      $req = $bdd->query('SELECT isVisible FROM user');
+	      $reponse = $req->fetchAll();
+
+	      return $reponse;
+	  }
+
+		public static function recupIDUser ()
+	  {
+	      $bdd = Connection::db_connect();
+	      $req = $bdd->query('SELECT id_user FROM user');
+	      $reponse = $req->fetchAll();
+
+	      return $reponse;
+	  }
+
+		public static function recupMaxIDUser ()
+	  {
+	      $bdd = Connection::db_connect();
+	      $req = $bdd->query('SELECT MAX(id_user) FROM user');
+	      $reponse = $req->fetchAll();
+
+	      return $reponse;
+	  }
 
 }
 

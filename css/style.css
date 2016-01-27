@@ -191,3 +191,11 @@ number {
 .CVuser {
 	padding: 0;
 }
+
+#checkboxCV {
+	text-align: center;
+}
+
+.rechercher {
+	float: right;
+}

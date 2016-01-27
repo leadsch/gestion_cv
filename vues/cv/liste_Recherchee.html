@@ -1,13 +1,10 @@
 <div class="row">
   <br><br>
-  <div class="medium-12 columns monCV">  <h4> LISTE DES CV DE NOS MEMBRES </h4> </div>
+  <div class="medium-12 columns monCV">  <h4> Résultat de votre recherche </h4> </div>
   <hr>
 
   <?php
-  if (isset($listAllUser)) {
     foreach ($listAllUser as $key => $user):
-
-      if($user['isVisible'] == '1') {
   ?>
       <div class="medium-12 columns contenuCV">
         <form method="post" action="index.php?uc=cv&action=affichCV">
@@ -19,12 +16,6 @@
       <div> . </div>
 
     <?php
-      }
     endforeach;
-     }
-
-     else if(isset($user_recherche)) {
-       
-     }
     ?>
 </div>
